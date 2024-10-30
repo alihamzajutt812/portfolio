@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2>Your Name</h2>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="profile">
+      <img src="assets/profile.jpg" alt="Your Profile" class="profile-pic">
+      <h1>Your Name</h1>
+      <p>Software Developer | Passionate about Code & Design</p>
+      <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="project-gallery">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A web app that does XYZ using React and AWS S3.</p>
+        <a href="https://mypakdharti1.vercel.app/" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Algorithm visualization tool built with JavaScript and D3.js.</p>
+        <a href="https://github.com/yourusername/project-two" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>JavaScript (React, Node.js)</li>
+      <li>Python</li>
+      <li>MongoDB, SQL</li>
+      <li>AWS S3</li>
+      <li>HTML, CSS</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out to me via email:</p>
+    <p><a href="mailto:youremail@example.com">youremail@example.com</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 Your Name. Built with love and code.</p>
+  </footer>
+
+  <script src="script.js">
+    // script.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+  const options = { threshold: 0.1 };
+  
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+  
+  sections.forEach(section => {
+    observer.observe(section);
+    section.classList.add("fade-out");
+  });
+});
+
+  </script>
+</body>
+</html>
